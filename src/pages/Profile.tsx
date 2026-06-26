@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import '../styles/Profile.css'
 import { useNavigate, useParams } from 'react-router-dom'
 function Profile(){
     const {username} = useParams<{username : string}>()
@@ -66,24 +65,24 @@ function Profile(){
     }
     
     return (
-        <div className = 'flex justify-center items-center min-w-screen h-screen '>
-            <div className='w-sm flex items-center flex-col'>
-                <div className='flex justify-center items-center flex-col shadow-xl/30 w-xs gap-2 mb-3 rounded-md p-3.5'>
-                    <div className='flex justify-center items-center w-full flex-col'>
-                        <img src={user?.avatar_url} className = 'min-w-28 rounded-4xl' alt="" />
-                        <h1>{user?.name}</h1>
-                        <h1>{user?.login}</h1>
-                        <p>{user?.bio}</p>
+        <div className = 'flex justify-center items-center max-w-screen max-h-screen '>
+            <div className='max-w-sm flex items-center flex-col'>
+                <div className='flex justify-center gap-5 mt-4 items-center flex-col shadow-xl/30 max-w-xs gap-2 mb-3 rounded-md p-3.5'>
+                    <div className='flex gap-3.5 justify-center items-center w-full flex-col'>
+                        <img src={user?.avatar_url} className = 'max-w-48 rounded-4xl' alt="" />
+                        <h1 className = 'font-bold text-2xl'>{user?.name}</h1>
+                        <h1 className = 'font-extralight'>{user?.login}</h1>
+                        <p className='text-center font-serif'>{user?.bio}</p>
                     </div>
-                    <div className='flex justify-center items-center flex-col'>
-                        <span className='flex justify-between'>
-                            <h1>Followers:</h1><h1>{user?.followers}</h1>
+                    <div className='flex justify-center items-center inset-shadow-sm inset-shadow-gray-400 p-3 bg-gray-100 flex-col max-w-xs'>
+                        <span className='w-2xs flex justify-between'>
+                            <h1>Followers:</h1><h1 className = 'shadow-sm/20 rounded-4xl pl-2 pr-2'>{user?.followers}</h1>
                         </span>
-                        <span className='flex justify-between'>
-                            <h1>Following:</h1><h1>{user?.following}</h1>
+                        <span className='w-2xs flex justify-between'>
+                            <h1>Following:</h1><h1 className = 'shadow-sm/20 rounded-4xl pl-2 pr-2'>{user?.following}</h1>
                         </span>
-                        <span className='flex justify-between'>
-                            <h1>Public repos:</h1><h1>{user?.public_repos}</h1>
+                        <span className='w-2xs flex justify-between'>
+                            <h1>Public repos:</h1><h1 className = 'shadow-sm/20 pl-2 pr-2 rounded-4xl'>{user?.public_repos}</h1>
                         </span>
                         <div className='flex flex-col justify-center items-center'>
                         <h1>{user?.company}</h1>
